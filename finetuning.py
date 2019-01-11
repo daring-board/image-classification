@@ -1,3 +1,4 @@
+import json
 import img_processing as iproc
 from keras.utils import np_utils
 from keras.models import Sequential, Model
@@ -15,8 +16,8 @@ if __name__=="__main__":
     '''
     学習用画像のロード
     '''
-    x, y, n_class = iproc.load_labeled_imgs('./train/')
-    y = np_utils.to_categorical(y, n_class)
+    x, y, labels = iproc.load_labeled_imgs('./train/')
+    y = np_utils.to_categorical(y, len(labels))
 
     '''
     転移学習用のレイヤーを追加
@@ -24,7 +25,7 @@ if __name__=="__main__":
     added_layer = GlobalAveragePooling2D()(base_model.output)
     added_layer = Dense(512, activation='relu')(added_layer)
     added_layer = Dropout(0.25)(added_layer)
-    added_layer = Dense(n_class, activation='softmax', name='classification')(added_layer)
+    added_layer = Dense(len(labels), activation='softmax', name='classification')(added_layer)
 
     '''
     base_modelと転移学習用レイヤーを結合
@@ -53,3 +54,9 @@ if __name__=="__main__":
     モデルパラメタの保存
     '''
     model.save('./model/custum_mobilenet.h5')
+
+    '''
+    ラベル情報を保存
+    '''
+    l_dict = {idx: labels[idx] for idx in range(len(labels))}
+    json.dump(l_dict, open('./model/labels.json', 'w'), indent=4)

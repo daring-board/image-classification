@@ -6,14 +6,14 @@ def load_imgs(d_path):
     return np.asarray(datas)
 
 def load_labeled_imgs(d_path):
-    data_dict, length = {}, 0
+    data_dict, labels = {}, []
     for d_name in os.listdir(d_path):
         if d_name == 'empty': continue
         if d_name == '.DS_Store': continue
         path = d_path + d_name + '/'
         data = process(path)
         data_dict[d_name] = data
-        length += 1
+        labels.append(d_name)
     x, y = [], []
     count = 0
     for key in data_dict.keys():
@@ -23,7 +23,7 @@ def load_labeled_imgs(d_path):
         count += 1
     x = np.asarray(x)
     y = np.asarray(y)
-    return x, y, length
+    return x, y, labels
 
 def process(d_path):
     datas = []
