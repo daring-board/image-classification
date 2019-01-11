@@ -8,6 +8,8 @@ def load_imgs(d_path):
 def load_labeled_imgs(d_path):
     data_dict = {}
     for d_name in os.listdir(d_path):
+        if d_name == 'empty': continue
+        if d_name == '.DS_Store': continue
         path = d_path + d_name + '/'
         data = process(path)
         data_dict[d_name] = data
@@ -25,6 +27,8 @@ def load_labeled_imgs(d_path):
 def process(d_path):
     datas = []
     for f_path in os.listdir(d_path):
+        if f_path == 'empty': continue
+        if f_path == '.DS_Store': continue
         f = d_path + f_path
         img = cv2.imread(f)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
