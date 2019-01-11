@@ -1,6 +1,7 @@
 # images
 *.jpg
 *.jpeg
+*.png
 
 # models
 *.h5

@@ -6,13 +6,14 @@ def load_imgs(d_path):
     return np.asarray(datas)
 
 def load_labeled_imgs(d_path):
-    data_dict = {}
+    data_dict, length = {}, 0
     for d_name in os.listdir(d_path):
         if d_name == 'empty': continue
         if d_name == '.DS_Store': continue
         path = d_path + d_name + '/'
         data = process(path)
         data_dict[d_name] = data
+        length += 1
     x, y = [], []
     count = 0
     for key in data_dict.keys():
@@ -22,14 +23,16 @@ def load_labeled_imgs(d_path):
         count += 1
     x = np.asarray(x)
     y = np.asarray(y)
-    return x, y
+    return x, y, length
 
 def process(d_path):
     datas = []
     for f_path in os.listdir(d_path):
         if f_path == 'empty': continue
         if f_path == '.DS_Store': continue
+        if f_path == 'Thumbs.db': continue
         f = d_path + f_path
+        # print(f)
         img = cv2.imread(f)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (224, 224))

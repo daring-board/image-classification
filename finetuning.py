@@ -3,22 +3,20 @@ from keras.utils import np_utils
 from keras.models import Sequential, Model
 from keras.layers import GlobalAveragePooling2D
 from keras.layers.core import Dense, Dropout
-from keras.applications.mobilenet import MobileNet
-# from keras.applications.vgg16 import VGG16
+from keras.applications.mobilenetv2 import MobileNetV2
 
 if __name__=="__main__":
 
     '''
     学習済みモデルのロード(base_model)
     '''
-    base_model = MobileNet(weights='imagenet', include_top=False)
-    # base_model = VGG16(weights='imagenet', include_top=False)
+    base_model = MobileNetV2(weights='imagenet', include_top=False)
 
     '''
     学習用画像のロード
     '''
-    x, y = iproc.load_labeled_imgs('./train/')
-    y = np_utils.to_categorical(y, 2)
+    x, y, n_class = iproc.load_labeled_imgs('./train/')
+    y = np_utils.to_categorical(y, n_class)
 
     '''
     転移学習用のレイヤーを追加
@@ -26,7 +24,7 @@ if __name__=="__main__":
     added_layer = GlobalAveragePooling2D()(base_model.output)
     added_layer = Dense(512, activation='relu')(added_layer)
     added_layer = Dropout(0.25)(added_layer)
-    added_layer = Dense(2, activation='softmax', name='classification')(added_layer)
+    added_layer = Dense(n_class, activation='softmax', name='classification')(added_layer)
 
     '''
     base_modelと転移学習用レイヤーを結合

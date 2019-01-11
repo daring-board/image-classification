@@ -11,7 +11,7 @@ if __name__=="__main__":
     '''
     画像のロード
     '''
-    x, y = iproc.load_labeled_imgs('./test/')
+    x, y, n_class = iproc.load_labeled_imgs('./test/')
 
     '''
     推論
@@ -24,7 +24,7 @@ if __name__=="__main__":
     count = 0
     for idx in range(len(predict)):
         result = (idx, predict[idx].argmax(), y[idx])
-        # print('%d: estimate: %d, correct: %d'%result)
+        print('%d: estimate: %d, correct: %d'%result)
         if result[1] == result[2]: count += 1
 
     print('分類精度：%f ％'%(100 * count / len(predict)))
