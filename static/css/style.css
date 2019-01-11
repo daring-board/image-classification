@@ -1,0 +1,20 @@
+header{
+  background-color: #6666DD;
+}
+
+footer{
+  text-align: center;
+  background-color: #DDEEEE;
+}
+
+p{
+  text-align: left;
+}
+
+.image-box {
+  float : left;
+}
+
+.desc {
+  float : right;
+}
