@@ -11,10 +11,16 @@ p{
   text-align: left;
 }
 
-.image-box {
+.content{
+  height: 420px;
+  width: 100%;
+}
+
+.image {
   float : left;
 }
 
 .desc {
-  float : right;
+  padding-left: 10px;
+  float : left;
 }

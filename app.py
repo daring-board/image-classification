@@ -54,12 +54,11 @@ def predict_core(path_list):
     label_dict = json.load(open('./model/labels.json', 'r'))
     result = []
     for idx in range(len(data)):
-        top3 = pred_class[idx].argsort()[::-1][:3]
+        top3 = pred_class[idx].argsort()[::-1][:2]
         item = {
             'name': names[idx],
-            'class1': label_dict[str(top3[0])],
-            'class2': label_dict[str(top3[1])],
-            'class3': label_dict[str(top3[2])],
+            'class1': (label_dict[str(top3[0])], str(pred_class[idx][top3[0]])),
+            'class2': (label_dict[str(top3[1])], str(pred_class[idx][top3[1]])),
         }
         result.append(item)
     print(result)

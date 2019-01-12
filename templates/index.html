@@ -6,22 +6,22 @@
        <h1>Image Classification</h1>
      </header>
       {% if predict %}
-      <div>
-        <div class="img-box">
-          <div><IMG SRC="{{filepath}}" width="400" height="400" BORDER="1"></div>
-        <!-- </div>
-        <div class="desc"> -->
+      <div class="content">
+        <div class="image">
+          <div><IMG SRC="{{filepath}}" width="350" height="350" BORDER="1"></div>
+        </div>
+        <div class="desc">
           <p>
-          1st Estimation {{predict['class1']}}<BR>
-          2nd Estimation {{predict['class2']}}<BR>
-          3rd Estimation {{predict['class3']}}<BR>
-          </p>
-          file name: {{predict['name']}} <BR>
+            1st Estimated label: {{predict['class1'][0]}}<BR>
+              The probability: {{predict['class1'][1]}}<BR>
+            2nd Estimated label: {{predict['class2'][0]}}<BR>
+              The probability: {{predict['class2'][1]}}<BR>
+            </p>
+          file name: {{predict['name']}}
         </div>
       </div>
-        <HR>
       {% endif %}
-      ファイルを選択して送信してください<BR>
+      <div>ファイルを選択して送信してください</div>
       <form action = "./" method = "POST"
          enctype = "multipart/form-data">
          <input type = "file" name = "FILE" />
