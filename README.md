@@ -57,17 +57,17 @@ image-classification repogitry for practice
     ```
     補足：分類できる画像の種類は下記を参照。  
     http://image-net.org/challenges/LSVRC/2012/browse-synsets
-  2. 分類器を自分好みにする
+  2. 分類器を自分好みにする  
     1. 学習データを下記からダウンロードする。  
     ```
     \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\10-monkey-full
-    ```
+    ```  
     2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
-    3. 下記コマンドでSec１のモデルを再学習する。  
+    3. 下記コマンドでモデルを再学習する。  
     ```
     python finetuning.py
     ```
-  3. 自分好みの分類器を検証する
+  3. 自分好みの分類器を検証する  
     1. 下記コマンドで再学習したモデルの精度を確認する。  
     ```
     python predict_finefuning.py
