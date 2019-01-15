@@ -1,7 +1,8 @@
 # images
 *.jpg
 *.jpeg
-*.png
+train/*/*.png
+test/*/*.png
 
 # models
 *.h5
