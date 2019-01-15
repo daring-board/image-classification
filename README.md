@@ -45,11 +45,11 @@ image-classification repogitry for practice
 ## プログラム実行方法
   0. ソースコードを取得する  
     - Gitコマンドが使える場合  
-
       git clone https://github.com/daring-board/image-classification.git  
     - 使えない場合  
     https://github.com/daring-board/image-classification よりZIPファイルをダウンロードして展開  
-  1. とりあえず画像を分類してみる
+
+  1. とりあえず画像を分類してみる  
     1. 取得したプロジェクトフォルダ内のtmpフォルダに分類してみたい画像を配置する。  
     2. 下記のコマンドを実行する。    
     ```
@@ -57,6 +57,7 @@ image-classification repogitry for practice
     ```
     補足：分類できる画像の種類は下記を参照。  
     http://image-net.org/challenges/LSVRC/2012/browse-synsets
+
   2. 分類器を自分好みにする  
     1. 学習データを下記からダウンロードする。  
     ```
@@ -67,6 +68,7 @@ image-classification repogitry for practice
     ```
     python finetuning.py
     ```
+
   3. 自分好みの分類器を検証する  
     1. 下記コマンドで再学習したモデルの精度を確認する。  
     ```
