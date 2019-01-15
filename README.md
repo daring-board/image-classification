@@ -26,19 +26,9 @@ image-classification repogitry for practice
   4. 作成した環境名の[▼]ボタンを押下して、『Open Terminal』を選択。
   ![図4](docs/0_4.png)
   5. 下記のコマンドを実行する。
-
-### 要件追加コマンド
-　プログラムを実行するための依存モジュールのインストールコマンド。  
-  - opencv
     ```
     pip install --ignore-installed --upgrade opencv-python
-    ```
-  - tensorflow
-    ```
     pip install --ignore-installed --upgrade tensorflow
-    ```
-  - keras
-    ```
     pip install --ignore-installed --upgrade keras
     ```
 
