@@ -27,22 +27,27 @@ image-classification repogitry for practice
   ![図4](docs/0_4.png)
   5. 下記のコマンドを実行する。
     ```
-    pip install --ignore-installed --upgrade opencv-python
-    pip install --ignore-installed --upgrade tensorflow
-    pip install --ignore-installed --upgrade keras
+    pip install --ignore-installed --upgrade opencv-python  
+    pip install --ignore-installed --upgrade tensorflow  
+    pip install --ignore-installed --upgrade keras  
     ```
 
 ## プログラム実行方法
   0. ソースコードを取得する  
-    - Gitコマンドが使える場合  
+    下記のどちらかの方法により、ソースコードを取得して好きな場所に配置する。
+    - Gitコマンドが使える場合
+      Anacondaのターミナルでソースコードを取得したい場所をカレントディレクトリに変更して、以下を実行する。
+      ```
       git clone https://github.com/daring-board/image-classification.git  
-    - 使えない場合  
-    https://github.com/daring-board/image-classification よりZIPファイルをダウンロードして展開  
+      ```
+    - Gitコマンドが使えない場合  
+      https://github.com/daring-board/image-classification よりZIPファイルをダウンロードして展開  
 
   1. とりあえず画像を分類してみる  
     1. 取得したプロジェクトフォルダ内のtmpフォルダに分類してみたい画像を配置する。  
     2. 下記のコマンドを実行する。    
     ```
+    cd image-classification  
     python pretrained.py    
     ```
     補足：分類できる画像の種類は下記を参照。  
@@ -70,7 +75,7 @@ image-classification repogitry for practice
       1. 学習データを下記からダウンロードする。  
       ```
       \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\small
-      ``` 
+      ```
       2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
       3. 下記コマンドでモデルを再学習する。  
       ```
