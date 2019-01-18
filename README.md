@@ -51,7 +51,7 @@ image-classification repogitry for practice
   2. 分類器を自分好みにする  
     1. 学習データを下記からダウンロードする。  
     ```
-    \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\10-monkey-full
+    \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\full
     ```  
     2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
     3. 下記コマンドでモデルを再学習する。  
@@ -64,3 +64,33 @@ image-classification repogitry for practice
     ```
     python predict_finefuning.py
     ```
+
+  4. 補足(データについて)
+    1. 少なすぎるデータで学習した場合のモデル精度を確認する。
+      1. 学習データを下記からダウンロードする。  
+      ```
+      \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\small
+      ``` 
+      2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
+      3. 下記コマンドでモデルを再学習する。  
+      ```
+      python finetuning.py
+      ```
+      4. 下記コマンドで再学習したモデルの精度を確認する。  
+      ```
+      python predict_finefuning.py
+      ```
+    2. 不均一なデータで学習した場合のモデル精度を確認する。
+      1. 学習データを下記からダウンロードする。  
+      ```
+      \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\unbaranced
+      ```  
+      2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
+      3. 下記コマンドでモデルを再学習する。  
+      ```
+      python finetuning.py
+      ```
+      4. 下記コマンドで再学習したモデルの精度を確認する。  
+      ```
+      python predict_finefuning.py
+      ```
