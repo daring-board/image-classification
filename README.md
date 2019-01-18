@@ -28,9 +28,9 @@ Anaconda3-2018.12-Windows-x86_64.exe
 ![図4](./docs/0_4.png)
 5. 下記のコマンドを実行する。    
 ```
-	pip install --ignore-installed --upgrade opencv-python  
-	pip install --ignore-installed --upgrade tensorflow  
-	pip install --ignore-installed --upgrade keras  
+pip install --ignore-installed --upgrade opencv-python  
+pip install --ignore-installed --upgrade tensorflow  
+pip install --ignore-installed --upgrade keras  
 ```
 
 ## プログラム実行方法  
@@ -86,7 +86,7 @@ Anaconda3-2018.12-Windows-x86_64.exe
    		1. 学習データを下記からダウンロードする。  
 		```
 	        \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\unbaranced
-	        ```   
+		```   
 		2. ダウンロードデータを取得したプロジェクトフォルダに配置。    
 		3. 下記コマンドでモデルを再学習する。   
 		```
