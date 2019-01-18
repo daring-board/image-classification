@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<link rel="stylesheet" href="/static/css/style.css">
+   <body bgcolor="#DDDDDD">
+     <header>
+       <h1>Image Classification</h1>
+     </header>
+      {% if predict %}
+      <div class="content">
+        <div class="image">
+          <div><IMG SRC="{{filepath}}" width="350" height="350" BORDER="1"></div>
+        </div>
+        <div class="desc">
+          <p>
+            1st Estimated label: {{predict['class1'][0]}}<BR>
+              The probability: {{predict['class1'][1]}}<BR>
+            2nd Estimated label: {{predict['class2'][0]}}<BR>
+              The probability: {{predict['class2'][1]}}<BR>
+            </p>
+          file name: {{predict['name']}}
+        </div>
+      </div>
+      {% endif %}
+      <div>ファイルを選択して送信してください</div>
+      <form action = "./" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "FILE" />
+         <input type = "submit"/>
+      </form>
+      <footer>
+        <h4>Developed By MicStarters</h4>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+header{
+  background-color: #6666DD;
+}
+
+footer{
+  text-align: center;
+  background-color: #DDEEEE;
+}
+
+p{
+  text-align: left;
+}
+
+.content{
+  height: 420px;
+  width: 100%;
+}
+
+.image {
+  float : left;
+}
+
+.desc {
+  padding-left: 10px;
+  float : left;
+}
