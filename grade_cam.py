@@ -1,5 +1,5 @@
 import sys
-import os
+import os, json
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
@@ -148,16 +148,12 @@ def compute_saliency(model, guided_model, img_path, layer_name='block5_conv3', c
     preprocessed_input = load_image(img_path)
 
     predictions = model.predict(preprocessed_input)
-    # top_n = 5
-    # top = decode_predictions(predictions, top=top_n)[0]
-    # classes = np.argsort(predictions[0])[-top_n:][::-1]
-    # print('Model prediction:')
-    # for c, p in zip(classes, top):
-    #     print('\t{:15s}\t({})\twith probability {:.3f}'.format(p[1], c, p[2]))
-    # if cls == -1:
+    label_dict = json.load(open('./model/labels.json', 'r'))
+    topN = predictions[0].argsort()[::-1][:5]
+    print(img_path)
+    for idx in range(len(topN)):
+        print('%d(label_name: %s, probability: %s)'%(idx, label_dict[str(topN[idx])], str(predictions[0][topN[idx]])))
     cls = np.argmax(predictions)
-    # class_name = decode_predictions(np.eye(1, 1000, cls))[0][0][1]
-    # print("Explanation for '{}'".format(class_name))
 
     gradcam = grad_cam(model, preprocessed_input, cls, layer_name)
     gb = guided_backprop(guided_model, preprocessed_input, layer_name)
