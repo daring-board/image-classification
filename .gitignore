@@ -6,6 +6,7 @@ test/*/*.png
 
 # models
 *.h5
+*.json
 
 # python
 *.pyc
