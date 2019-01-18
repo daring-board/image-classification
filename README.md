@@ -1,5 +1,9 @@
 # ImageClassification
-image-classification repogitry for practice
+image-classification repogitry for practice  
+本リポジトリでできること：  
+  1. 機械学習モデルを使用して画像を分類する
+  2. 機械学習モデルを自分好みにチューニングする
+  3. チューニングした機械学習モデルの精度を確認する
 
 ## 概要
  1. とりあえず画像を分類してみる
