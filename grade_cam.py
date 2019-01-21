@@ -199,7 +199,10 @@ if __name__ == '__main__':
         # gradcam, gb, guided_gradcam = compute_saliency(model, guided_model, layer_name='block5_conv3', img_path=img_path, cls=-1, visualize=True, save=True)
 
         ''' MobileNetV2 '''
-        gradcam, gb, guided_gradcam = compute_saliency(model, guided_model, layer_name='Conv_1', img_path=img_path, cls=-1, visualize=True, save=False)
+        # gradcam, gb, guided_gradcam = compute_saliency(model, guided_model, layer_name='Conv_1', img_path=img_path, cls=-1, visualize=True, save=False)
 
         ''' Xception '''
         # gradcam, gb, guided_gradcam = compute_saliency(model, guided_model, layer_name='conv2d_4', img_path=img_path, cls=-1, visualize=True, save=True)
+
+        ''' InceptionResNetV2 '''
+        gradcam, gb, guided_gradcam = compute_saliency(model, guided_model, layer_name='conv_7b', img_path=img_path, cls=-1, visualize=True, save=True)
