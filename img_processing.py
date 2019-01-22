@@ -1,9 +1,16 @@
 import os, sys, cv2
 import numpy as np
+import json
 
 def load_imgs(d_path):
     datas, paths = process(d_path)
     return np.asarray(datas), paths
+
+def load_label():
+    labels = [row.strip().split(':') for row in open('./model/labels.json', 'r', encoding='utf8')][1:-1]
+    labels = {int(row[0].replace('"', '')): row[1] for row in labels}
+    return labels
+
 
 def load_labeled_imgs(d_path):
     data_dict, labels = {}, []

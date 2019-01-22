@@ -1,12 +1,12 @@
 import img_processing as iproc
-from keras.applications.mobilenet import MobileNet, decode_predictions
+from keras.applications.mobilenetv2 import MobileNetV2, decode_predictions
 
 if __name__=="__main__":
 
     '''
     学習済みモデルのロード
     '''
-    model = MobileNet(weights='imagenet')
+    model = MobileNetV2(weights='imagenet')
     # model.summary()
 
     '''
