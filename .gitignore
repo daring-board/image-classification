@@ -12,6 +12,7 @@ tmp/*.png
 # models
 *.h5
 *.json
+*-shard*of*
 
 # python
 *.pyc
