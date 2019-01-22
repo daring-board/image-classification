@@ -16,7 +16,8 @@ https://github.com/daring-board/image-classification
 
 ## 実行環境構築
 実行環境にはAnacondaPythonを使用する。  
-インストーラは下記に配置してある。ホームページよりダウンロードして実行してもよい。
+インストーラは下記に配置してある。ホームページよりダウンロードして実行してもよい。  
+https://www.anaconda.com/download/
 ```
 \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習
 Anaconda3-2018.12-Windows-x86_64.exe
@@ -46,7 +47,7 @@ pip install --ignore-installed --upgrade keras
     git clone https://github.com/daring-board/image-classification.git  
     ```
   + Gitコマンドが使えない場合   
-    `https://github.com/daring-board/image-classification よりZIPファイル` をダウンロードして展開   
+    https://github.com/daring-board/image-classification よりZIPファイル をダウンロードして展開   
 1. とりあえず画像を分類してみる  
 	1. 取得したプロジェクトフォルダ内のtmpフォルダに分類してみたい画像を配置する。  
 	2. 下記のコマンドを実行する。    
@@ -69,7 +70,7 @@ pip install --ignore-installed --upgrade keras
 	  例として、１行目は以下のように解釈すればよい。  
 	     **『ラベルはホットドッグであり、その確率は約97％である』**  
 	  補足：分類できる画像の種類は下記を参照。  
-  	  `http://image-net.org/challenges/LSVRC/2012/browse-synsets`  
+  	  http://image-net.org/challenges/LSVRC/2012/browse-synsets  
   　
 2. 分類器を自分好みにする  
 	1. 学習データを下記からダウンロードする。  
@@ -104,7 +105,7 @@ pip install --ignore-installed --upgrade keras
 	2. 不均一なデータで学習した場合のモデル精度を確認する。  
    		1. 学習データを下記からダウンロードする。  
 		```
-	        \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\unbaranced
+               \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\unbaranced
 		```   
 		2. ダウンロードデータを取得したプロジェクトフォルダに配置。    
 		3. 下記コマンドでモデルを再学習する。   
