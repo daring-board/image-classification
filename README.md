@@ -54,9 +54,7 @@ pip install --ignore-installed --upgrade keras
 	  cd image-classification  
 	  python pretrained.py    
 	  ```
-  	  補足：分類できる画像の種類は下記を参照。  
-  	  `http://image-net.org/challenges/LSVRC/2012/browse-synsets`  
-  	3. 分類結果の確認
+	3. 分類結果の確認  
     	   画像4枚をtmpフォルダに配置した場合、以下のように結果が出力される。  
 	  ```
 	  Predicted: [('n07697537', 'hotdog', 0.9785994)]  
@@ -70,6 +68,8 @@ pip install --ignore-installed --upgrade keras
 	   　３つ目のセクションは、分類確率  
 	  例として、１行目は以下のように解釈すればよい。  
 	     **『ラベルはホットドッグであり、その確率は約97％である』**  
+	  補足：分類できる画像の種類は下記を参照。  
+  	  `http://image-net.org/challenges/LSVRC/2012/browse-synsets`  
   　
 2. 分類器を自分好みにする  
 	1. 学習データを下記からダウンロードする。  
