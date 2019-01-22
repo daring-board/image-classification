@@ -86,7 +86,11 @@ pip install --ignore-installed --upgrade keras
 	1. 下記コマンドで再学習したモデルの精度を確認する。  
 	  ```
 	  python predict_finefuning.py
-	  ```  
+	  ```
+	2. 下記コマンドで再学習したモデルの結果を出力する。  
+	  ```
+	  python my_model.py
+	  ```
 4. 補足(データについて)  
 	1. 少なすぎるデータで学習した場合のモデル精度を確認する。  
 		1. 学習データを下記からダウンロードする。  
