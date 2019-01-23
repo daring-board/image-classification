@@ -1,12 +1,18 @@
 # images
-*.jpg
-*.jpeg
+train/*/*.jpg
+train/*/*.jpeg
+test/*/*.jpg
+test/*/*.jpeg
 train/*/*.png
 test/*/*.png
+tmp/*.jpg
+tmp/*.jpeg
+tmp/*.png
 
 # models
 *.h5
 *.json
+*-shard*of*
 
 # python
 *.pyc

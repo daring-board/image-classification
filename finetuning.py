@@ -4,14 +4,14 @@ from keras.utils import np_utils
 from keras.models import Sequential, Model
 from keras.layers import GlobalAveragePooling2D
 from keras.layers.core import Dense, Dropout
-from keras.applications.mobilenetv2 import MobileNetV2
+from keras.applications.mobilenet import MobileNet
 
 if __name__=="__main__":
 
     '''
     学習済みモデルのロード(base_model)
     '''
-    base_model = MobileNetV2(weights='imagenet', include_top=False)
+    base_model = MobileNet(weights='imagenet', include_top=False)
 
     '''
     学習用画像のロード
