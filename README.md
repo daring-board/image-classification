@@ -16,12 +16,8 @@ https://github.com/daring-board/image-classification
 
 ## 実行環境構築
 実行環境にはAnacondaPythonを使用する。  
-インストーラは下記に配置してある。ホームページよりダウンロードして実行してもよい。  
-https://www.anaconda.com/download/
-```
-\\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習
-Anaconda3-2018.12-Windows-x86_64.exe
-```
+ホームページよりダウンロードしてインストーラを実行する。  
+https://www.anaconda.com/download/  
 インストール後の手順は以下。  
 1. Anaconda Navigatorを起動して、左サイドバーメニューからEnviromentsを選択。  
 ![図1](./docs/0_1.png)
@@ -73,10 +69,7 @@ pip install --ignore-installed --upgrade keras
   	  http://image-net.org/challenges/LSVRC/2012/browse-synsets  
   　
 2. 分類器を自分好みにする  
-	1. 学習データを下記からダウンロードする。  
-	  ```
-	  \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\full
-	  ```  
+	1. 学習データを収集する。 
 	2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
   	3. 下記コマンドでモデルを再学習する。  
 	  ```
@@ -93,10 +86,7 @@ pip install --ignore-installed --upgrade keras
 	  ```
 4. 補足(データについて)  
 	1. 少なすぎるデータで学習した場合のモデル精度を確認する。  
-		1. 学習データを下記からダウンロードする。  
-	   	```
-	   	\\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\small
-	   	```  
+		1. 学習データを収集する(1カテゴリ当たり5枚程度)。
 		2. ダウンロードデータを取得したプロジェクトフォルダに配置。  
    		3. 下記コマンドでモデルを再学習する。  
 		```
@@ -107,10 +97,7 @@ pip install --ignore-installed --upgrade keras
 		python predict_finefuning.py
 		```  
 	2. 不均一なデータで学習した場合のモデル精度を確認する。  
-   		1. 学習データを下記からダウンロードする。  
-		```
-               \\micsvr03\Order\Develop\micstarter\PROJ\05_企画道場\02.活動\勉強会\20190111_静止画機械学習\dataset\monkeys\8kind\unbaranced
-		```   
+   		1. 学習データを収集する(各カテゴリの画像枚数を不均一に)。
 		2. ダウンロードデータを取得したプロジェクトフォルダに配置。    
 		3. 下記コマンドでモデルを再学習する。   
 		```
