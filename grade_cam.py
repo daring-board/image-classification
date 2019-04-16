@@ -196,7 +196,7 @@ if __name__ == '__main__':
     ''' 設定ファイルの読み込み '''
     model = build_model()
     guided_model = build_guided_model()
-    base_path = './test/white_headed_capuchin/'
+    base_path = './tmp/'
     for f_name in os.listdir(base_path):
         img_path = base_path + f_name
         ''' VGG16 '''
