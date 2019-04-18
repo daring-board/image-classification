@@ -17,7 +17,7 @@ from keras.preprocessing.image import ImageDataGenerator
 
 class DataSequence(Sequence):
     def __init__(self, data_path, label):
-        self.batch = 1
+        self.batch = 4
         self.data_file_path = data_path
         self.datagen = ImageDataGenerator(
                             rotation_range=30,
@@ -105,7 +105,7 @@ if __name__=="__main__":
     base_modelのモデルパラメタは学習させない。
     (added_layerのモデルパラメタだけを学習させる)
     '''
-    for layer in base_model.layers[:-3]:
+    for layer in base_model.layers:
          layer.trainable = False
     model.summary()
 
@@ -120,7 +120,7 @@ if __name__=="__main__":
     '''
     model.fit_generator(
          train_gen,
-         epochs=25,
+         epochs=50,
          steps_per_epoch=int(train_gen.length),
         #  validation_data=train_gen,
         #  validation_steps=4*int(train_gen.length / 10),
